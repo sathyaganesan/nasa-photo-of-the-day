@@ -1,20 +1,21 @@
 import React, { useState, useEffect} from "react";
 import "./App.css";
 import axios from 'axios';
-import Header from 'Header';
+import Header from './Header';
+import Image from './Image';
 
 
 
 function App() {
 
-  const [nasa, setNasa] = useState({});
+  const [nasa, setNasa] = useState({ });
 
   useEffect(() => {
     axios
     // .get(`https://api.nasa.gov/planetary/apod?api_key=satLkes9xflbbIelTcYCzoSDOG8SWLwvo90GIK9R`)
     .get(`https://api.nasa.gov/planetary/apod?api_key=Vt4TbPCdgZCtspljyw7mBqcfAzbD9lahFePuGdbV&date=2020-08-20`)
     .then((res) => {
-      setNasa(res.nasa);
+      setNasa(res.data);
       console.log(res.data);
       console.log(res);
     })
@@ -25,14 +26,14 @@ function App() {
   
   return (
     <div className="App">
-      <Header
-        titlename = {nasa.title}
+      {/* <Header
+        title = {nasa.title}
         date = {nasa.date}
+      /> */}
+      <Image 
+        src = {nasa.url}
       />
-      {/* <Image 
-      
-      />
-      <footer 
+      {/* <footer 
       
       /> */}
       <p>

@@ -1,11 +1,11 @@
 import React from 'react-dom';
 
-const Header = props => {
-    const { titlename, date } = props;
+const Header = (props) => {
+    const { title, date } = props;
 
-    return(
+    return (
         <div>
-            <h2>{titlename}</h2>
+            <h2>{title}</h2>
             <p>{date}</p>
         </div>
     );
